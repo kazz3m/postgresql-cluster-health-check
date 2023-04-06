@@ -1,0 +1,10 @@
+[Unit]
+Description=Postgresql ClusterCheck PRIMARY/REPLICA 
+[Service]
+User=postgres
+WorkingDirectory=/var/lib/pgsql/
+ExecStart=/var/lib/pgsql/clustercheck.py
+Restart=always
+RestartSec=10
+[Install]
+WantedBy=multi-user.target
