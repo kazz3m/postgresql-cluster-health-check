@@ -25,11 +25,9 @@ class MyServer(BaseHTTPRequestHandler):
         dbcur = mydb.cursor()
         dbcur.execute(query)
         replica =  dbcur.fetchone()
-        print("Server is replica: %s" %(replica))
         if not replica[0] :
             responseCode = 200
-            responseText = "MASTER"
-            print("I'm a master!")
+            responseText = "PRIMARY"
     except Exception as e :
         print("Error running the query ".format(e))
     finally:
