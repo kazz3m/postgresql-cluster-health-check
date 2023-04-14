@@ -1,9 +1,10 @@
 [Unit]
 Description=Postgresql ClusterCheck PRIMARY/REPLICA 
 [Service]
+Type=simple
 User=postgres
 WorkingDirectory=/var/lib/pgsql/
-ExecStart=/var/lib/pgsql/clustercheck.py
+ExecStart=/usr/bin/python3 /var/lib/pgsql/clustercheck.py
 Restart=always
 RestartSec=10
 [Install]
